@@ -8,8 +8,9 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "lint": "eslint src --ext .ts",
-    "format": "prettier --write \"src/**/*.ts\""
+    "lint": "eslint src --ext .ts,.tsx,.js,.jsx,.css",
+    "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,css}\"",
+    "typecheck": "tsc --noEmit"
   },
   "files": [
     "dist",
@@ -29,7 +30,12 @@
   "devDependencies": {
     "@eslint/js": "^9.27.0",
     "@types/node": "^22.15.21",
+    "autoprefixer": "^10.4.21",
+    "cssnano": "^7.0.7",
     "eslint": "^9.27.0",
+    "postcss": "^8.5.3",
+    "postcss-import": "^16.1.0",
+    "postcss-nested": "^7.0.2",
     "prettier": "^3.5.3",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.32.1",

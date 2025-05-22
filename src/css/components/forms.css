@@ -1,0 +1,136 @@
+@import '../base/variables.css';
+
+@layer components {
+  /* Form Group */
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--form-group-gap);
+    margin-bottom: var(--form-gap);
+  }
+
+  /* Form Label */
+  .form-label {
+    font-size: var(--form-label-size);
+    font-weight: var(--form-label-weight);
+    letter-spacing: var(--form-label-spacing);
+    color: var(--text);
+  }
+
+  /* Form Input */
+  .form-input {
+    width: 100%;
+    padding: var(--form-input-padding-y) var(--form-input-padding-x);
+    font-size: var(--form-input-size);
+    line-height: var(--line-height-normal);
+    color: var(--form-input-color);
+    background-color: var(--form-input-bg);
+    border: var(--form-input-border);
+    border-radius: var(--form-input-radius);
+    transition: all var(--form-transition-duration) var(--form-transition-timing);
+  }
+
+  .form-input:focus {
+    outline: none;
+    border-color: var(--form-focus-border);
+    box-shadow: 0 0 0 var(--form-focus-ring-size) var(--form-focus-ring);
+    background-color: var(--form-focus-bg);
+  }
+
+  .form-input::placeholder {
+    color: var(--text-muted);
+  }
+
+  /* Form Textarea */
+  .form-textarea {
+    min-height: var(--form-textarea-min-height);
+    resize: vertical;
+  }
+
+  /* Form Select */
+  .form-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236B7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right var(--form-input-padding-x) center;
+    background-size: 1.5em 1.5em;
+    padding-right: calc(var(--form-input-padding-x) * 2 + 1.5em);
+  }
+
+  /* Form Checkbox & Radio */
+  .form-check {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+  }
+
+  .form-check-input {
+    width: 1.25em;
+    height: 1.25em;
+    margin: 0;
+    border: var(--form-input-border);
+    border-radius: 0.25em;
+    transition: all var(--form-transition-duration) var(--form-transition-timing);
+  }
+
+  .form-check-input[type="radio"] {
+    border-radius: 50%;
+  }
+
+  .form-check-input:checked {
+    background-color: var(--primary);
+    border-color: var(--primary);
+  }
+
+  .form-check-label {
+    font-size: var(--form-label-size);
+    color: var(--text);
+  }
+
+  /* Form Validation */
+  .form-input.is-invalid {
+    border-color: #dc2626;
+  }
+
+  .form-input.is-invalid:focus {
+    box-shadow: 0 0 0 var(--form-focus-ring-size) rgba(220, 38, 38, 0.15);
+  }
+
+  .invalid-feedback {
+    font-size: var(--font-size-sm);
+    color: #dc2626;
+    margin-top: var(--spacing-1);
+  }
+
+  /* Form Help Text */
+  .form-text {
+    font-size: var(--font-size-sm);
+    color: var(--text-muted);
+    margin-top: var(--spacing-1);
+  }
+
+  /* Form Grid */
+  .form-grid {
+    display: grid;
+    gap: var(--form-gap);
+  }
+
+  @media (min-width: 768px) {
+    .form-grid-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* Form Actions */
+  .form-actions {
+    display: flex;
+    gap: var(--spacing-4);
+    margin-top: var(--spacing-6);
+  }
+
+  @media (max-width: 768px) {
+    .form-actions {
+      flex-direction: column;
+    }
+  }
+} 
